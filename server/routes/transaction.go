@@ -12,5 +12,5 @@ func TransactionRoutes(e *echo.Group) {
 	TransactionRepository := repositories.RepositoryUser(mysql.DB)
 	h := handlers.HandlerUser(TransactionRepository)
 
-	e.GET("/transaction", h.CreateNewTransaction)
+	e.POST("/transaction", h.CreateNewTransaction)
 }
